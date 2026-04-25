@@ -120,7 +120,7 @@ owned by group bandit6
 
 ### Answer
 
-Similar to the previous level, we need to play with some options of the `find` command. We already know how to find by type and size, now we just need to provide the options `-user bandit7 -group bandit6` to match the asked properties. The password is hidden inside the server, so we need to check in the root file system. We ran `find / -type f -size 33c -user bandit7 -group bandit6`, the find command will try to check inside some unpermitted folders and somewhere between all the "Permission denied" logs we can find the directorie of the password, and the password as follows.
+Similar to the previous level, we need to play with some options of the `find` command. We already know how to find by type and size, now we just need to provide the options `-user bandit7 -group bandit6` to match the asked properties. The password is hidden inside the server, so we need to check in the root file system. We ran `find / -type f -size 33c -user bandit7 -group bandit6`, the find command will try to check inside some not allowed folders and somewhere between all the "Permission denied" logs we can find the directory of the password, and the password as follows.
 
 > morbNTDkSW6jIlUc0ymOdMaLnOlFVAaj
 
@@ -134,8 +134,38 @@ The password for the next level is stored in the file data.txt next to the word 
 
 ### Answer
 
-Thankfully another easy level. We don't need to search the file, because it is on the home directorie, so we can just ran `grep millionth data.txt` to get the following password.
+Thankfully another easy level. We don't need to search the file, because it is on the home directory, so we can just ran `grep millionth data.txt` to get the following password.
 
 > dfwvzFQi4mU0wfNbFOe9RoWskMLg7eEc
 
 Now i can log-in with 'bandit8' user using that password.
+
+## Level 8 -> Level 9
+
+### Objective
+
+The password for the next level is stored in the file data.txt and is the only line of text that occurs only once
+
+### Answer
+
+Not as easy than the last one. This level we were introduced to piping, strongly and useful way of connecting command outputs. To get our password, we will do a mix of commands to properly see the correct password. First we need to output the content of the same file we see on the previous level by using `cat` command. So we 'pipe' that output using `|` and writing the command we want to use with the output of `cat`, in this case, we wanna `sort` that output. Now we can pipe again to a command called `uniq`, in addition to the `-c` option we can already see our password. But to only get the password as output, we can lastly pipe it to `grep` and specify the '1 ' pattern that matches the line of the password, which give us the bellow result.
+
+![Final command to get the correct password](./img-02.png)
+
+> 4CKMh1JI91bUIZZPXDqGanal4xvAg0JM
+
+Now i can log-in with 'bandit9' user using that password.
+
+## Level 9 -> Level 10
+
+### Objective
+
+The password for the next level is stored in the file data.txt in one of the few human-readable strings, preceded by several ‘=’ characters.
+
+### Answer
+
+Not as easy than the last one. This level we were introduced to piping, strongly and useful way of connecting command outputs. To get our password, we will do a mix of commands to properly see the correct password. First we need to output the content of the same file we see on the previous level by using `cat` command. So we 'pipe' that output using `|` and writing the command we want to use with the output of `cat`, in this case, we wanna `sort` that output. Now we can pipe again to a command called `uniq`, in addition to the `-c` option we can already see our password. But to only get the password as output, we can lastly pipe it to `grep` and specify the '1 ' pattern that matches the line of the password, which give us the bellow result.
+
+> 4CKMh1JI91bUIZZPXDqGanal4xvAg0JM
+
+Now i can log-in with 'bandit9' user using that password.
