@@ -59,3 +59,33 @@ So i ran `cat ./'--spaces in this finename--'` to get the following password.
 > MNk8KNH3Usiio41PRUEoDFPqfxLPlSmx
 
 Now i can log-in with 'bandit3' user using that password.
+
+## Level 3 -> Level 4
+
+### Objective
+
+The password for the next level is stored in a hidden file in the inhere directory.
+
+### Answer
+
+Simple task, just change directory to the specified folder and ran `ls -a` to see hidden files inside that folder. After finding the file name called "...Hidding-from-you", i could ran cat ...Hidding-from-you to get the following password.
+
+> 2WmrDFRmJIq3IPxneAaMGhap0pFhF3NJ
+
+Now i can log-in with 'bandit4' user using that password.
+
+## Level 4 -> Level 5
+
+### Objective
+
+The password for the next level is stored in the only human-readable file in the inhere directory. Tip: if your terminal is messed up, try the “reset” command.
+
+### Answer
+
+Not as simple as the last one. We need to verify the human-readable file between 9 files, but we can't check one-by-one cause the wrong file's can mess with the terminal. To avoid that, we can use the `file` command to classify every file type and search for the only human-readable, as we can see in the picture bellow. It's important to note that there are dashed filenames, so we need to use relative or absolute path name to these directories.
+
+![How to identify human-readable files](./img-01.png)
+
+> 4oQYVPkxZOOEOO5pTW81FB8j8lxXGUQw
+
+Now i can log-in with 'bandit5' user using that password.
