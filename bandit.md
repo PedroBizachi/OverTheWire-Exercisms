@@ -125,3 +125,17 @@ Similar to the previous level, we need to play with some options of the `find` c
 > morbNTDkSW6jIlUc0ymOdMaLnOlFVAaj
 
 Now i can log-in with 'bandit7' user using that password.
+
+## Level 7 -> Level 8
+
+### Objective
+
+The password for the next level is stored in the file data.txt next to the word millionth
+
+### Answer
+
+Thankfully another easy level. We don't need to search the file, because it is on the home directorie, so we can just ran `grep millionth data.txt` to get the following password.
+
+> dfwvzFQi4mU0wfNbFOe9RoWskMLg7eEc
+
+Now i can log-in with 'bandit8' user using that password.
