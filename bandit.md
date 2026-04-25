@@ -107,3 +107,21 @@ Now we need to play with some options of the `find` command. I pick `-readable` 
 > HWasnPhtq9AVKe0dmk45nxy20cvUa6EG
 
 Now i can log-in with 'bandit6' user using that password.
+
+## Level 6 -> Level 7
+
+### Objective
+
+The password for the next level is stored somewhere on the server and has all of the following properties:
+
+owned by user bandit7
+owned by group bandit6
+33 bytes in size
+
+### Answer
+
+Similar to the previous level, we need to play with some options of the `find` command. We already know how to find by type and size, now we just need to provide the options `-user bandit7 -group bandit6` to match the asked properties. The password is hidden inside the server, so we need to check in the root file system. We ran `find / -type f -size 33c -user bandit7 -group bandit6`, the find command will try to check inside some unpermitted folders and somewhere between all the "Permission denied" logs we can find the directorie of the password, and the password as follows.
+
+> morbNTDkSW6jIlUc0ymOdMaLnOlFVAaj
+
+Now i can log-in with 'bandit7' user using that password.
