@@ -24,11 +24,13 @@ The password for the next level is stored in a file called readme located in the
 
 Ran `ls` to find the 'readme' file and `less readme` to see the password inside of that file.
 
->ZjLjTmM6FvvyRnrb2rfNWOZOTa6ip5If
+> ZjLjTmM6FvvyRnrb2rfNWOZOTa6ip5If
 
 Next i should disconnect from the bandit0 profile and log-in into the bandit1 profile using the given password.
 
 ## Level 1 -> Level 2
+
+### Objective
 
 The password for the next level is stored in a file called - located in the home directory
 
@@ -38,6 +40,22 @@ Dashed filename or a file that starts with an dash can mess with the shell becau
 
 So i ran `cat ./-` to get the following password.
 
->263JGJPfgU6LtdEvgfWU1XP5yac29mFx
+> 263JGJPfgU6LtdEvgfWU1XP5yac29mFx
 
-Now i can log with 'bandit2' user using that password.
+Now i can log-in with 'bandit2' user using that password.
+
+## Level 2 -> Level 3
+
+### Objective
+
+The password for the next level is stored in a file called --spaces in this filename-- located in the home directory
+
+### Answer
+
+Spaces in file names it's a common problem and can cause errors in command-line environments, even being technically permitted. To interact with that file, i can simply wrap the file name in quotes and calling it by the relative path
+
+So i ran `cat ./'--spaces in this finename--'` to get the following password.
+
+> MNk8KNH3Usiio41PRUEoDFPqfxLPlSmx
+
+Now i can log-in with 'bandit3' user using that password.
