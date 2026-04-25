@@ -89,3 +89,21 @@ Not as simple as the last one. We need to verify the human-readable file between
 > 4oQYVPkxZOOEOO5pTW81FB8j8lxXGUQw
 
 Now i can log-in with 'bandit5' user using that password.
+
+## Level 5 -> Level 6
+
+### Objective
+
+The password for the next level is stored in a file somewhere under the inhere directory and has all of the following properties:
+
+human-readable
+1033 bytes in size
+not executable
+
+### Answer
+
+Now we need to play with some options of the `find` command. I pick `-readable` to see the human-readable files, `-type f -size 1033c` to only show files that has exactly 1033 bytes (c stands for bytes) and `-not -executable` to match that last filter. The result is a file that contains the following password.
+
+> HWasnPhtq9AVKe0dmk45nxy20cvUa6EG
+
+Now i can log-in with 'bandit6' user using that password.
