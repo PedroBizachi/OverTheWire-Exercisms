@@ -164,8 +164,8 @@ The password for the next level is stored in the file data.txt in one of the few
 
 ### Answer
 
-Not as easy than the last one. This level we were introduced to piping, strongly and useful way of connecting command outputs. To get our password, we will do a mix of commands to properly see the correct password. First we need to output the content of the same file we see on the previous level by using `cat` command. So we 'pipe' that output using `|` and writing the command we want to use with the output of `cat`, in this case, we wanna `sort` that output. Now we can pipe again to a command called `uniq`, in addition to the `-c` option we can already see our password. But to only get the password as output, we can lastly pipe it to `grep` and specify the '1 ' pattern that matches the line of the password, which give us the bellow result.
+Now that we are getting good with piping, we can easily pass this level. Again we need to find the password inside data.txt, but this is a data file with some binaries inside it, so reading it in the terminal can make a huge mess. Instead, we can use piping to manage the output to only shows strings via `strings` command, now we can see the output in the terminal without messing everything. Now we only need to `grep` for the '= ' char to see the password in a really fun way :).
 
-> 4CKMh1JI91bUIZZPXDqGanal4xvAg0JM
+> FGUW5ilLVJrxX9kMYMmlN4MgbpfMiqey
 
 Now i can log-in with 'bandit9' user using that password.
