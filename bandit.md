@@ -168,4 +168,18 @@ Now that we are getting good with piping, we can easily pass this level. Again w
 
 > FGUW5ilLVJrxX9kMYMmlN4MgbpfMiqey
 
-Now i can log-in with 'bandit9' user using that password.
+Now i can log-in with 'bandit10' user using that password.
+
+## Level 10 -> Level 11
+
+### Objective
+
+The password for the next level is stored in the file data.txt, which contains base64 encoded data
+
+### Answer
+
+Well, simple task. Just pass the output of the file to the `base64` command with the decode option `-d` to see the following password.
+
+> dtR173fZKb0RRsDFSGsg2RWnpNVj3qRr
+
+Now i can log-in with 'bandit11' user using that password.
