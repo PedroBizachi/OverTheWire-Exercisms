@@ -183,3 +183,18 @@ Well, simple task. Just pass the output of the file to the `base64` command with
 > dtR173fZKb0RRsDFSGsg2RWnpNVj3qRr
 
 Now i can log-in with 'bandit11' user using that password.
+
+## Level 11 -> Level 12
+
+### Objective
+
+The password for the next level is stored in the file data.txt, where all lowercase (a-z) and uppercase (A-Z) letters have been rotated by 13 positions
+
+### Answer
+
+This level is also simple once we understand the encoding used. The content of `data.txt` is encrypted with ROT13, which is a Caesar cipher that rotates every letter 13 positions in the alphabet. Since the text only changes alphabetic characters, the best tool here is `tr`, because it was made to translate characters from one set to another directly in the terminal.
+So, we can output the file with `cat` and pipe it to `tr`, telling it to replace `A-Z` and `a-z` with their ROT13 equivalents.
+
+> 7x16WNeHIi5YkIhWsfFIqoognUTyj9Q4
+
+Now i can log-in with 'bandit12' user using that password.
